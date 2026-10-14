@@ -103,7 +103,6 @@ input, select, textarea, button {
     background-size: contain; /* Картинка повністю вміщується та зберігає пропорції */
     min-height: 380px;
 }
-
 .hero-content {
     width: 50%;
     display: block;
