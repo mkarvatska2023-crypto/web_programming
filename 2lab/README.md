@@ -41,7 +41,7 @@
 
 ## Результат
 Посилання на опубліковану сторінку:  
-[https://username.github.io/repository-name/lab_2/](https://username.github.io/repository-name/lab_2/)
+[https://mkarvatska2023-crypto.github.io/web_programming/2lab/](https://mkarvatska2023-crypto.github.io/web_programming/2lab//)
 
 Скріншот результату:  
 ![Результат лабораторної роботи](./Знімок%20екрана%202026-10-15%20104650.png)
