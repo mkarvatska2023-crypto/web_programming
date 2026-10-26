@@ -1,0 +1,27 @@
+
+@use "variables" as v;
+
+@mixin container {
+  width: calc(100% - 32px);
+  max-width: v.$container-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin respond-to($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin card {
+  background-color: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$border-radius;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

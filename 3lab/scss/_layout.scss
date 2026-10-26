@@ -1,0 +1,279 @@
+
+@use "variables" as v;
+@use "mixins" as m;
+
+/* HEADER */
+
+.main-header {
+  background-color: v.$color-white;
+  border-bottom: 1px solid v.$color-border;
+  padding: 16px 0;
+}
+
+.header-container {
+  @include m.container;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: v.$color-muted;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 6px 0;
+  color: #334155;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: v.$color-primary;
+  border-bottom-color: v.$color-primary;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  @include m.container;
+
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  padding: 48px 0;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.92) 45%,
+      rgba(255, 255, 255, 0.25) 100%
+    ),
+    url("../assets/images/2_lab_header.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  color: #ff0000;
+}
+
+#hero-title {
+  color: #0f172a;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.hero-content p {
+  color: #475569;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.hero-content p:nth-of-type(2) {
+  margin-bottom: 24px;
+}
+
+/* MAIN SECTIONS */
+
+.section {
+  @include m.container;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  color: v.$color-muted;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* CSS GRID */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* WARNING */
+
+.warning-box {
+  position: relative;
+  width: calc(100% - 32px);
+  max-width: 1020px;
+  margin: 30px auto;
+  padding: 20px 24px;
+  background-color: v.$color-danger-bg;
+  border: 1px solid v.$color-danger-border;
+  border-radius: v.$border-radius;
+}
+
+/* TABLE */
+
+.table-wrapper {
+  width: 100%;
+  background: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$border-radius;
+  overflow-x: auto;
+}
+
+/* ORDER FORM */
+
+.order-form {
+  @include m.card;
+  padding: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* FOOTER */
+
+.main-footer {
+  background-color: v.$color-footer;
+  color: #cbd5e1;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  @include m.container;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info h3 {
+  color: v.$color-white;
+  font-size: 18px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.footer-nav a {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: v.$color-white;
+}
+
+.footer-copyright {
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* TABLET */
+
+@include m.respond-to(v.$tablet) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    justify-content: flex-end;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copyright {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* DESKTOP */
+
+@include m.respond-to(v.$desktop) {
+  .cards-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .form-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-section {
+    padding: 80px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0) 90%), url('../assert/3_lab_header\ \(1\).png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain; /* Картинка повністю вміщується та зберігає пропорції */
+    min-height: 380px;
+    
+  }
+
+  .hero-content {
+    width: 50%;
+  }
+}
