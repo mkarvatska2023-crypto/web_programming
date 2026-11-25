@@ -62,6 +62,7 @@ function updateView() {
 updateView();
 
 
+
 console.group('--- Перевірка роботи системи класів ---');
 const sensorA = system.findSensorById('NS-01');
 const sensorB = system.findSensorById('NS-02');
